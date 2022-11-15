@@ -55,7 +55,7 @@ def trabalho_final():
                 ],
                 'KeepJobFlowAliveWhenNoSteps': True,
                 'TerminationProtected': False,
-                'Ec2SubnetId': 'subnet-09b06b5d8fc0d0062'
+                'Ec2SubnetId': 'subnet-0701a755ea796fd65'
             },
             Applications=[{'Name': 'Spark'}, {'Name': 'Hive'}]
         )
