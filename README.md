@@ -6,4 +6,4 @@
 
 João Victor Milagres Guimarães
 
-Gabriel Murta
+Gabriel Murta Pimenta
