@@ -7,10 +7,10 @@ schema = "sg_uf string, qt_votos_validos int, qt_votos_brancos int, dt_carga str
 votos = spark.read.csv("s3://jvmg-puc-002112264889/votos/", header=True, schema=schema, sep=";", encoding="latin1")
 
 print("Writing dataset as a parquet table")
-votos.write.format("parquet").mode("overwrite").save("s3://jvmg-puc-002112264889/parquet/")
+votos.write.format("parquet").mode("overwrite").save("s3://jvmg-puc-002112264889/parquet/voto_parquet/")
 
 print("Votos")
-parquet_votos = spark.read.parquet("s3://jvmg-puc-002112264889/parquet/")
+parquet_votos = spark.read.parquet("s3://jvmg-puc-002112264889/parquet/voto_parquet/")
 ind = parquet_votos.select('sg_uf','qt_votos_validos','qt_votos_brancos')
 ind.show()
 
