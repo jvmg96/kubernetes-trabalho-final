@@ -17,10 +17,12 @@ ind.show()
 print("Soma dos Votos")
 soma = ind.withColumn('soma_votos', f.expr("qt_votos_validos + qt_votos_brancos"))
 soma.show()
+soma.write.mode("overwrite").save("s3://jvmg-puc-002112264889/parquet/soma")
 
 print("Subtracao dos Votos")
 subtracao = ind.withColumn('subtracao_votos', f.expr("qt_votos_validos - qt_votos_brancos"))
 subtracao.show()
+subtracao.write.mode("overwrite").save("s3://jvmg-puc-002112264889/parquet/subtracao")
 
 print("Tabela Final")
 tabela_final = ind.withColumn('soma_votos', f.expr("qt_votos_validos + qt_votos_brancos"))
